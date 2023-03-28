@@ -35,3 +35,14 @@ export const toggleComplete = (id) => {
         })
     })
 }
+
+export const editTodo = (id, text) => {
+    todos.update((currentTodos) => {
+        return currentTodos.map((todos) => {
+            if (todo.id === id) {
+                return { ...todo, text };
+            }
+            return todo;
+        })
+    })
+}
