@@ -18,3 +18,20 @@ export const addTodo = () => {
         return [...currentTodos, { id: uuidv4(), text: '', complete: false }];
     });
 }
+
+export const deleteTodo = (id) => {
+    todos.update((currentTodos) => {
+        return currentTodos.filter((todo) => todo.id !== id);
+    });
+}
+
+export const toggleComplete = (id) => {
+    todos.update((currentTodos) => {
+        return currentTodos.map((todos) => {
+            if (todo.id === id) {
+                return { ...todo, complete: !todo.complete };
+            }
+            return todo;
+        })
+    })
+}
